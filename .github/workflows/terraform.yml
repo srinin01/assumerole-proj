@@ -17,11 +17,11 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Configure AWS credentials from Test Srini account
-        uses: aws-actions/configure-aws-credentials@e21f7333e801ca751f058cc52de17f0ee6e1da6f
+        uses: aws-actions/configure-aws-credentials@v1
         with:
           role-to-assume: arn:aws:iam::595123332338:role/AssumRoleTest
           aws-region: us-east-1
     
-      - name: Copy files to the test website with the AWS CLI
+      - name: Copy files to the test website with the AWS CLi
         run: |
           aws s3 sync . s3://assume-role-github-actions-test
